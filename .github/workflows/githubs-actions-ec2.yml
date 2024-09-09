@@ -1,2 +1,11 @@
-- name: Verify Node.js version
-  run: node -v
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Set up Node.js (Node 20)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # Explicitly use Node.js 20
